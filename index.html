@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Creative World Public School</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -10,7 +11,7 @@
 
   <!-- Header -->
   <header>
-    <h1>CREATIVE WORLD PUBLIC SCHOOOL , BABUALI (DARBHANG) </h1>
+    <h1>CREATIVE WORLD PUBLIC SCHOOL , BABUALI (DARBHANG) </h1>
     <h3>Learning Today, Leading Tomorrow</h3>
   </header>
 
@@ -25,12 +26,41 @@
     
   </nav>
 
-  <section class="hero">
+ <section class="hero">
   <h2>Empowering Students for a Bright Future</h2>
   <p>Admissions Open for 2026-27</p>
+  <a href="admissions.html" class="btn">Apply Now</a>
 </section>
-</div>
 
+<!-- Highlights” Section (Very Important) -->
+ 
+<section class="highlights">
+
+  <div class="highlight-box">
+    <i class="fas fa-user-graduate icon-student"></i>
+    <h3 class="counter" data-target="500">0</h3>
+    <p>Students</p>
+  </div>
+
+  <div class="highlight-box">
+    <i class="fas fa-chalkboard-teacher icon-teacher"></i>
+    <h3 class="counter" data-target="30">0</h3>
+    <p>Qualified Teachers</p>
+  </div>
+
+  <div class="highlight-box">
+    <i class="fas fa-award icon-result"></i>
+    <h3 class="counter" data-target="100">0</h3>
+    <p>Board Results</p>
+  </div>
+
+  <div class="highlight-box">
+    <i class="fas fa-laptop icon-class"></i>
+    <h3>Smart</h3>
+    <p>Classrooms</p>
+  </div>
+
+</section>
 
   <!-- Main Section -->
   <section>
@@ -63,9 +93,71 @@
 
 
   <!-- Footer -->
-  <footer>
-    <p>© 2026 Creative World Public School</p>
-  </footer>
+ <footer class="footer">
+
+  <div class="footer-container">
+
+    <div class="footer-box footer-brand">
+  <div class="footer-logo">
+    <img src="jamil.jpg" alt="School Logo">
+    <h3>Creative World Public School</h3>
+  </div>
+</div>
+
+    <div class="footer-box">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="footer-box">
+      <h4>Contact Us</h4>
+      <p>Babuali, Darbhanga</p>
+      <p>Phone: +91 XXXXX XXXXX</p>
+      <p>Email: info@cwpschool.com</p>
+    </div>
+
+    <div class="footer-box">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-youtube"></i>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Creative World Public School | All Rights Reserved
+  </div>
+
+</footer>
+  <script>
+  const counters = document.querySelectorAll('.counter');
+
+  counters.forEach(counter => {
+    counter.innerText = '0';
+
+    const updateCounter = () => {
+      const target = +counter.getAttribute('data-target');
+      const current = +counter.innerText;
+
+      const increment = target / 100;
+
+      if (current < target) {
+        counter.innerText = Math.ceil(current + increment);
+        setTimeout(updateCounter, 20);
+      } else {
+        counter.innerText = target + "+";
+      }
+    };
+
+    updateCounter();
+  });
+</script>
 
 </body>
 </html>

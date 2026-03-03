@@ -6,75 +6,112 @@
 </head>
 <body>
 
-  <header>
-    <h1>CREATIVE WORLD PUBLIC SCHOOOL , BABUALI (DARBHANG) </h1>
-    <h3>Learning Today, Leading Tomorrow</h3>
-  </header>
+<header>
+  <h1>CREATIVE WORLD PUBLIC SCHOOL, BABUALI (DARBHANGA)</h1>
+  <h3>Learning Today, Leading Tomorrow</h3>
+</header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="academics.html">Academics</a>
-    <a href="admissions.html">Admissions</a>
-    <a href="contact.html">Contact</a>
-    <a href="gallery.html">Gallery</a>
-  </nav>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="academics.html">Academics</a>
+  <a href="admissions.html">Admissions</a>
+  <a href="contact.html">Contact</a>
+  <a href="gallery.html">Gallery</a>
+</nav>
 
-  <section>
-  <h2>School Gallery</h2>
+<section class="gallery">
+  <h2>Our School Gallery</h2>
 
-  <div class="gallery">
+  <div class="gallery-container">
 
     <div class="gallery-item">
-      <img src="kids.jpg" alt="School Activity">
+      <img src="kids.jpg" alt="Annual Function">
+      <div class="overlay">Annual Function</div>
     </div>
 
     <div class="gallery-item">
-      <img src="kids2.jpg" alt="Classroom">
+      <img src="pic11.jpg" alt="Smart Classroom">
+      <div class="overlay">Smart Classroom</div>
     </div>
 
     <div class="gallery-item">
-      <img src="kids3.jpg" alt="Students">
+      <img src="kids3.jpg" alt="Sports Day">
+      <div class="overlay">Sports Day</div>
     </div>
 
     <div class="gallery-item">
-      <img src="pic11.JPG" alt="Students">
+      <img src="kids4.jpg" alt="Science Lab">
+      <div class="overlay">Science Lab</div>
     </div>
 
     <div class="gallery-item">
-      <img src="kids4.jpg" alt="Students">
+      <img src="pic5.jpg" alt="Activity">
+      <div class="overlay">School Activity</div>
     </div>
 
     <div class="gallery-item">
-      <img src="pic5.JPG" alt="Students">
+      <img src="aksashwithmedal.jpg" alt="Achievement">
+      <div class="overlay">Student Achievement</div>
     </div>
 
     <div class="gallery-item">
-      <img src="aksashwithmedal.jpg" alt="School Building">
+      <img src="pic7.jpg" alt="Event">
+      <div class="overlay">School Event</div>
     </div>
 
     <div class="gallery-item">
-      <img src="pic7.jpg" alt="Students">
-    </div>
-
-    <div class="gallery-item">
-      <img src="pic8.jpg" alt="Students">
+      <img src="pic8.jpg" alt="Celebration">
+      <div class="overlay">Celebration</div>
     </div>
 
     <div class="gallery-item">
       <img src="pic9.jpg" alt="Students">
+      <div class="overlay">Our Students</div>
     </div>
 
     <div class="gallery-item">
-      <img src="pic10.jpg" alt="Students">
+      <img src="pic10.jpg" alt="Campus">
+      <div class="overlay">School  JCampus</div>
     </div>
 
   </div>
 </section>
 
-  <footer>
-    <p>© 2026 Creative World Public School</p>
-  </footer>
+<!-- Lightbox Popup -->
+<div class="lightbox" id="lightbox">
+  <span class="close-btn">&times;</span>
+  <img id="lightbox-img">
+</div>
+
+<footer>
+  <p>© 2026 Creative World Public School</p>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+  const galleryItems = document.querySelectorAll(".gallery-item img");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const closeBtn = document.querySelector(".close-btn");
+
+  galleryItems.forEach(img => {
+    img.addEventListener("click", () => {
+      lightbox.style.display = "block";
+      lightboxImg.src = img.src;
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target !== lightboxImg) {
+      lightbox.style.display = "none";
+    }
+  });
+</script>
 
 </body>
 </html>
