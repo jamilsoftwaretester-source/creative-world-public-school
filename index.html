@@ -11,8 +11,10 @@
 
   <!-- Header -->
   <header>
+  
     <h1>CREATIVE WORLD PUBLIC SCHOOL , BANAULI (DARBHANG) </h1>
     <h3>Learning Today, Leading Tomorrow</h3>
+   
   </header>
 
   <!-- Navigation Menu -->
@@ -26,8 +28,26 @@
     
   </nav>
 
+ <section class="hero-slider">
+  <div class="slide active">
+    <img src="schoolimages/sliderone.jpg" alt="School Building">
+  </div>
+
+  <div class="slide">
+    <img src="schoolimages/slidertwo.jpg" alt="Students">
+  </div>
+
+  <div class="slide">
+    <img src="schoolimages/sliderthree.webp" alt="Studentss">
+  </div>
+
+  <!-- <div class="slide">
+    <img src="https://wallpapers.com/images/high/indian-soldiers-at-galwan-valley-tz66c3o6tfjzhm9b.webp" alt="Classroom">
+  </div> -->
+</section>
+
  <section class="hero">
-  <h2>Empowering Students for a Bright Future</h2>
+  <h2>A good education is a foundation of a better future</h2>
   <p>Admissions Open for 2026-27</p>
   <a href="admissions.html" class="btn">Apply Now</a>
 </section>
@@ -45,7 +65,7 @@
   <div class="highlight-box">
     <i class="fas fa-chalkboard-teacher icon-teacher"></i>
     <h3 class="counter" data-target="30">0</h3>
-    <p>Qualified Teachers</p>
+    <p>Qualified Teachers</p> 
   </div>
 
   <div class="highlight-box">
@@ -84,8 +104,9 @@
     holistic development.
   </p>
 </section>
+
 <div class="school-image">
-  <img src="schoolimages/groupakashsir.jpg" alt="School Building">
+  <img src="schoolimages/school.png" alt="School Building">
   <!-- <img src="IMG20220530094544.jpg" alt="School Building"> -->
   <!-- <img src="childeren.jpg" alt="Children Image"> -->
 </div>
@@ -101,7 +122,7 @@
   <div class="footer-logo">
     <img src="schoolimages/logo.jpg" alt="School Logo">
     <h3>Creative World Public School</h3>
-  </div>
+  </div>  
 </div>
 
     <div class="footer-box">
@@ -159,5 +180,30 @@
   });
 </script>
 
+<!-- slider script  -->
+
+
+<script>
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+function showSlide(){
+slides.forEach(slide => slide.classList.remove("active"));
+slides[index].classList.add("active");
+
+index++;
+if(index >= slides.length){
+index = 0;
+}
+}
+
+setInterval(showSlide,3000);
+</script>
+<script>
+window.addEventListener("scroll", function(){
+  const nav = document.querySelector("nav");
+  nav.classList.toggle("scrolled", window.scrollY > 10);
+});
+</script>
 </body>
 </html>
